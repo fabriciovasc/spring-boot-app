@@ -15,3 +15,10 @@ Rodar testes
 ```
 mvn test
 ```
+
+## ✔️ Entregas
+
+- [x] Spring Boot + Spring Data JPA
+- [x] API Rest
+- [x] Segurança
+- [ ] Vue.js
