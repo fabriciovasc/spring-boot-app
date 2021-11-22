@@ -28,6 +28,7 @@ public class LoginController {
     Authentication auth = new UsernamePasswordAuthenticationToken(login.getUsername(), login.getPassword()); //gera o objeto tipo authentication, passando user e senha
     auth = authManager.authenticate(auth); //faz autenticaçao, se errado gera exception
     login.setPassword(null); //apagar senha, para evitar risco
+    login.setAuth(auth.getAuthorities().iterator().next().getAuthority());
     login.setToken(JwtUtils.generateToken(auth)); //seta o token com o JwtUtils com base no auth gerado (linha 28)
     return login;
   }
