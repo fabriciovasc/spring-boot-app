@@ -53,35 +53,30 @@ create table registration_auth (
   foreign key auth_auth_fk (auth_id) references auth (auth_id) on delete restrict on update cascade
 );
 
-insert into registration (
-  registration_email,
-  registration_password,
-  registration_name,
-  registration_cellphone,
-  registration_user_agent,
-  registration_name_browser,
-  registration_version_browser,
-  registration_system,
-  registration_gpu_model,
-  registration_ip)
-    values
-      ('admin@admin.com', '$2a$10$i3.Z8Yv1Fwl0I5SNjdCGkOTRGQjGvHjh/gMZhdc3e7LIovAklqM6C', 'admin', '12', 'admin', 'admin', '10', 'windows', 'rtx', '0.0.0.0'),
-      ('user@user.com', '$2a$10$i3.Z8Yv1Fwl0I5SNjdCGkOTRGQjGvHjh/gMZhdc3e7LIovAklqM6C', 'user', '12', 'user', 'usser', '10', 'windows', 'rtx', '0.0.0.0');
-insert into profile (
-  profile_uuid,
-  profile_unique_hash
-)
-  values
-      ('1234', '1234'),
-      ('12345', '12345');
+insert into registration 
+(registration_email, registration_password, registration_name, registration_cellphone, registration_user_agent, registration_name_browser, registration_version_browser, registration_system, registration_gpu_model, registration_ip)
+values
+('admin@admin.com', '$2a$10$i3.Z8Yv1Fwl0I5SNjdCGkOTRGQjGvHjh/gMZhdc3e7LIovAklqM6C', 'admin', '12', 'admin', 'admin', '10', 'windows', 'rtx', '0.0.0.0'),
+('user@user.com', '$2a$10$i3.Z8Yv1Fwl0I5SNjdCGkOTRGQjGvHjh/gMZhdc3e7LIovAklqM6C', 'user', '12', 'user', 'usser', '10', 'windows', 'rtx', '0.0.0.0');
+
+insert into profile 
+(profile_uuid, profile_unique_hash)
+values
+('1234', '1234'),
+('12345', '12345');
+
 insert into profile_registration 
-  values
-    (1, 1),
-    (2, 2);
-insert into auth (auth_role)
-  values
-      ('ROLE_ADMIN'),
-      ('ROLE_USER');
+values
+(1, 1),
+(2, 2);
+
+insert into auth 
+(auth_role)
+values
+('ROLE_ADMIN'),
+('ROLE_USER');
+
 insert into registration_auth
-  values(1, 1),
-  values(2, 2);
+values
+(1, 1),
+(2, 2);
