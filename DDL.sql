@@ -64,13 +64,24 @@ insert into registration (
   registration_system,
   registration_gpu_model,
   registration_ip)
-    values('admin@admin.com', '$2a$10$i3.Z8Yv1Fwl0I5SNjdCGkOTRGQjGvHjh/gMZhdc3e7LIovAklqM6C', 'admin', '12', 'admin', 'admin', '10', 'windows', 'rtx', '0.0.0.0');
+    values
+      ('admin@admin.com', '$2a$10$i3.Z8Yv1Fwl0I5SNjdCGkOTRGQjGvHjh/gMZhdc3e7LIovAklqM6C', 'admin', '12', 'admin', 'admin', '10', 'windows', 'rtx', '0.0.0.0'),
+      ('user@user.com', '$2a$10$i3.Z8Yv1Fwl0I5SNjdCGkOTRGQjGvHjh/gMZhdc3e7LIovAklqM6C', 'user', '12', 'user', 'usser', '10', 'windows', 'rtx', '0.0.0.0');
 insert into profile (
   profile_uuid,
   profile_unique_hash
 )
-    values('1234', '1234');
-insert into profile_registration values(1, 1);
+  values
+      ('1234', '1234'),
+      ('12345', '12345');
+insert into profile_registration 
+  values
+    (1, 1),
+    (2, 2);
 insert into auth (auth_role)
-    values('ROLE_ADMIN');
-insert into registration_auth values (1, 1);
+  values
+      ('ROLE_ADMIN'),
+      ('ROLE_USER');
+insert into registration_auth
+  values(1, 1),
+  values(2, 2);
